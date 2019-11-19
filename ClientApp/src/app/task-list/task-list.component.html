@@ -1,0 +1,27 @@
+<div>
+<h1 class="h2">List</h1>
+</div>
+<div>
+    <table class='table table-striped'>
+        <thead>
+            <tr>
+                <tr>
+                    <th>Id</th>
+                    <th>Título</th>
+                    <th>Descripción</th>
+                    <th>Prioridad</th>
+                    <th>Ver</th>
+                </tr>
+            
+        </thead>
+        <tr *ngFor="let task of tasks">
+           <td>{{task.id}}</td>
+           <td>{{task.title}}</td>
+           <td>{{task.description}}</td>
+           <td><span *ngIf="task.priority===true;"><b>Prioritario</b></span> </td>
+           <td><a routerLink="/taskedit/{{task.id}}">
+            ver
+           </a></td>
+        </tr>
+    </table>
+</div>
